@@ -1,0 +1,15 @@
+<h1>Root#index</h1>
+<p>
+  <% if admin? %>
+  <%= link_to 'Регистрация пользователя', new_user_path %>
+  <% else %>
+  <% end %>
+</p>
+<p>
+<% if login? %>
+<%= link_to 'Выход', logout_path %>
+<% else %>
+<%= link_to 'Вход', login_path %>
+<%= link_to 'Регистрация для админов', new_users_admin_path %>
+<% end %>
+</p>

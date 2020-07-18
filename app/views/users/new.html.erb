@@ -1,0 +1,17 @@
+<h1>Новый пользователь</h1>
+
+<% @user.errors.full_messages.each do |msg| %>
+  <li><%= msg %></li>
+<% end %>
+
+<%= form_for @user do |f| %>
+  <%= f.label :username %><br>
+  <%= f.text_field :username %><br>
+  <%= f.label :name %><br>
+  <%= f.text_field :name %><br>
+  <%= f.label :lastname %><br>
+  <%= f.text_field :lastname %><br>
+  <%= f.label :address %><br>
+  <%= f.text_area :address %><br><br>
+  <%= f.submit %>
+<%end%>
