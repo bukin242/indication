@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
           session[:user_id] = @user.id
           session.delete(:admin)
           flash[:info] = 'Вход выполнен'
-          redirect_to '/'
+          redirect_to password_reset_path
         else
           flash[:alert] = 'Пароль не подходит'
           render :new

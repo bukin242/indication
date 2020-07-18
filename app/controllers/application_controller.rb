@@ -13,8 +13,14 @@ class ApplicationController < ActionController::Base
 
   private
 
-  def admin_require?
+  def admin_require
     unless session[:admin]
+      redirect_to login_path
+    end
+  end
+
+  def login_require
+    unless session[:user_id]
       redirect_to login_path
     end
   end
