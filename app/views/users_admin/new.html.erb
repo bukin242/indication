@@ -4,7 +4,7 @@
   <li><%= msg %></li>
 <% end %>
 
-<%= form_for @user do |f| %>
+<%= form_for @user, url: users_admin_index_path do |f| %>
   <%= f.label :username %><br>
   <%= f.text_field :username %><br>
   <%= f.label :password %><br>

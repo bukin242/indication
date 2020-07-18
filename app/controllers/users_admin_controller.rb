@@ -10,7 +10,7 @@ class UsersAdminController < ApplicationController
       @user = User.new
       render :new
     else
-      @user = User.create!(
+      @user = User.create(
         username: user_params[:username],
         password: Digest::MD5.hexdigest(user_params[:password]),
         admin: true
