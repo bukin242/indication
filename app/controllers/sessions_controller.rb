@@ -36,6 +36,6 @@ class SessionsController < ApplicationController
     session.delete(:user_id)
     session.delete(:admin)
     flash[:info] = 'Вы вышли'
-    redirect_to '/login'
+    redirect_to login_path
   end
 end
