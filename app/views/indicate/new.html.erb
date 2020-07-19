@@ -1,0 +1,8 @@
+<h1>Ввести показания</h1>
+<%= form_tag indicate_index_path do %>
+  <%= label_tag t('helpers.label.indication.cold_water') %>
+  <%= text_field_tag :cold_water %>
+  <%= label_tag t('helpers.label.indication.hot_water') %>
+  <%= text_field_tag :hot_water %>
+  <%= submit_tag "Ввод" %>
+<%end%>

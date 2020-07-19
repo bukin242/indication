@@ -1,7 +1,7 @@
 <h1><%= I18n.t 'sing_up' %></h1>
 
 <% @user.errors.full_messages.each do |msg| %>
-  <li><%= msg %></li>
+  <li class="red"><%= msg %></li>
 <% end %>
 
 <%= form_for @user, url: users_admin_index_path do |f| %>

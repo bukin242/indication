@@ -10,4 +10,6 @@ Rails.application.routes.draw do
 
   get 'password_reset', to: 'password_reset#new'
   post 'password_reset', to: 'password_reset#create'
+
+  resources :indicate, only: [:new, :create]
 end

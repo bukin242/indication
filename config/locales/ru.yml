@@ -31,9 +31,25 @@
 
 ru:
   helpers:
+    submit:
+      user:
+        create: 'Создать'
     label:
       user:
         username: 'Пользователь'
         password: 'Пароль'
+        name: 'Имя'
+        lastname: 'Фамилия'
+        address: 'Адрес'
+      indication:
+        hot_water: 'Горячая вода'
+        cold_water: 'Холодная вода'
   sing_up: 'Регистрация'
   login: 'Вход'
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            username:
+              blank: Пользователь не может быть пустым

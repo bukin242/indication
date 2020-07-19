@@ -15,4 +15,4 @@
  */
 
 .flash.info { color: green; }
-.flash.alert { color: red; }
+.flash.alert, .red { color: red; }

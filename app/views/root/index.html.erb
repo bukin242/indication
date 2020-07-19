@@ -1,10 +1,10 @@
 <h1>Панель управления</h1>
-<p>
+
   <% if admin? %>
-  <%= link_to 'Регистрация пользователя', new_user_path %>
+  <p><%= link_to 'Регистрация пользователя', new_user_path %></p>
   <% else %>
+  <p><%= link_to 'Ввести показания', new_indicate_path %></p>
   <% end %>
-</p>
 <p>
 <% if login? %>
 <%= link_to 'Выход', logout_path %>
