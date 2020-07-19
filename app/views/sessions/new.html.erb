@@ -1,9 +1,9 @@
-<h1>Вход</h1>
+<h1><%= I18n.t 'login' %></h1>
 
 <%= form_tag login_path do %>
-  <%= label_tag :username %>
+  <%= label_tag t('helpers.label.user.username') %>
   <%= text_field_tag :username %>
-  <%= label_tag :password %>
+  <%= label_tag t('helpers.label.user.password') %>
   <%= password_field_tag :password %>
   <%= submit_tag "Войти" %>
 <%end%>
