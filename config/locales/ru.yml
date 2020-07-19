@@ -53,3 +53,11 @@ ru:
           attributes:
             username:
               blank: Пользователь не может быть пустым
+        cold_water:
+          attributes:
+            value:
+              not_a_number: 'Введите число'
+        hot_water:
+          attributes:
+            value:
+              not_a_number: 'Введите число'

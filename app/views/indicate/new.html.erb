@@ -1,8 +1,36 @@
 <h1>Ввести показания</h1>
 <%= form_tag indicate_index_path do %>
+<table>
+  <tr>
+    <td>
   <%= label_tag t('helpers.label.indication.cold_water') %>
+    </td>
+    <td>
+    <% if @cold_water %>
+      <% @cold_water.errors.full_messages.each do |msg| %>
+        <li class="red"><%= msg %></li>
+      <% end %>
+    <% end %>
   <%= text_field_tag :cold_water %>
+    </td>
+  </tr>
+  <tr>
+    <td>
   <%= label_tag t('helpers.label.indication.hot_water') %>
+    </td>
+    <td>
+      <% if @hot_water %>
+        <% @hot_water.errors.full_messages.each do |msg| %>
+          <li class="red"><%= msg %></li>
+        <% end %>
+      <% end %>
   <%= text_field_tag :hot_water %>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
   <%= submit_tag "Ввод" %>
+    </td>
+  </tr>
+  </table>
 <%end%>
