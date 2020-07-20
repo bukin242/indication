@@ -10,10 +10,13 @@ class StatisticController < ApplicationController
         with suitable_users as (
           select user_id, sum(value) as sum_value
             from #{(params[:type] == 'cold_water' ? 'cold_waters' : 'hot_waters')}
-           group by user_id order by sum(value) desc
-           limit #{LIMIT}
+           group by user_id
         )
-        select * from users join suitable_users on suitable_users.user_id = users.id
+        select *
+          from users
+          join suitable_users on suitable_users.user_id = users.id
+         order by sum_value desc
+         limit #{LIMIT}
       SQL
 
       @users = User.find_by_sql(sql)
