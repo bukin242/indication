@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   def create
     @user = User.find_by(username: user_params[:username])
     if @user
-      flash[:alert] = 'Пользователь уже существует'
+      flash[:alert] = I18n.t('controllers.users.exists')
       @user = User.new
       render :new
     else
@@ -20,7 +20,7 @@ class UsersController < ApplicationController
       )
 
       if @user.valid?
-        flash[:info] = 'Пользователь создан'
+        flash[:info] = I18n.t('controllers.users.created')
         redirect_to login_path
       else
         render :new

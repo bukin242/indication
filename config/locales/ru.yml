@@ -65,3 +65,17 @@ ru:
           attributes:
             value:
               not_a_number: 'Введите число'
+  controllers:
+    password_require:
+      blank: 'Введите пароль'
+      require: 'Пароли не совпадают'
+    indicate:
+      blank: 'Введите значение'
+    users:
+      exists: 'Пользователь уже существует'
+      created: 'Пользователь создан'
+    sessions:
+      login: 'Вход выполнен'
+      logout: 'Вы вышли'
+      password_incorrect: 'Пароль не подходит'
+      user_not_exists: 'Пользователя не существует'

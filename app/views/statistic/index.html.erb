@@ -1,0 +1,22 @@
+<h1>Отчет</h1>
+<% if params[:type].present? %>
+  <% if @users.present? %>
+    <table class="table">
+      <tr>
+        <th>Пользователь</th>
+        <th>Общая сумма показаний</th>
+      </tr>
+      <% @users.each do |user| %>
+      <tr>
+        <td><%= link_to user.username, user_path(user.id) %></td>
+        <td><%= user.sum_value %></td>
+      </tr>
+      <% end %>
+    </table>
+  <% else %>
+    Пользователей нет.
+  <% end %>
+<% else %>
+<p><%= link_to "Холодная вода", "#{statistic_path}?type=cold_water" %></p>
+<p><%= link_to "Горячая вода", "#{statistic_path}?type=hot_water" %></p>
+<% end %>

@@ -1,6 +1,5 @@
 class IndicateController < ApplicationController
   before_action :login_require
-  before_action :admin_require
 
   def new
   end
@@ -17,7 +16,7 @@ class IndicateController < ApplicationController
         render :new and return if @hot_water.invalid?
       end
     else
-      flash[:alert] = 'Введите значение'
+      flash[:alert] = I18n.t('controllers.indicate.blank')
       render :new
     end
   end

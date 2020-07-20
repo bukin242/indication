@@ -3,6 +3,7 @@
   <% if admin? %>
   <p><%= link_to 'Регистрация пользователя', new_user_path %></p>
   <p><%= link_to 'Список пользователей', users_path %></p>
+  <p><%= link_to 'Отчет', statistic_path %></p>
   <% else %>
   <p><%= link_to 'Ввести показания', new_indicate_path %></p>
   <% end %>

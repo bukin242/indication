@@ -6,10 +6,10 @@ class PasswordResetController < ApplicationController
 
   def create
     if params[:password].blank?
-      flash[:alert] = 'Введите пароль'
+      flash[:alert] = I18n.t('controllers.password_require.blank')
       render :new
     elsif params[:password] != params[:password_require]
-      flash[:alert] = 'Пароли не совпадают'
+      flash[:alert] = I18n.t('controllers.password_require.require')
       render :new
     else
       user = User.find(session[:user_id])

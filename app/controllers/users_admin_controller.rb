@@ -6,7 +6,7 @@ class UsersAdminController < ApplicationController
   def create
     @user = User.find_by(username: user_params[:username])
     if @user
-      flash[:alert] = 'Пользователь уже существует'
+      flash[:alert] = I18n.t('controllers.users.exists')
       @user = User.new
       render :new
     else
