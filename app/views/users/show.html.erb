@@ -1,0 +1,47 @@
+<h1>Показания пользователя <%= @user.username %></h1>
+
+<table cellpadding="10">
+<tr>
+<td align="center">
+  <h2>Холодная вода</h2>
+  <% if @cold_water.present? %>
+    <table class="table">
+      <tr>
+        <th>Дата</th>
+        <th>Значение</th>
+      </tr>
+      <% @cold_water.each do |record| %>
+        <tr>
+          <td><%= record.created_at.strftime("%Y-%m") %></td>
+          <td><%= record.value %></td>
+        </tr>
+      <% end %>
+    </table>
+  <% else %>
+  <p>Показаний нет.</p>
+  <% end %>
+</td>
+<td align="center">
+  <h2>Горячая вода</h2>
+  <% if @hot_water.present? %>
+    <table class="table">
+      <tr>
+        <th>Дата</th>
+        <th>Значение</th>
+      </tr>
+      <% @hot_water.each do |record| %>
+        <tr>
+          <td><%= record.created_at.strftime("%Y-%m") %></td>
+          <td><%= record.value %></td>
+        </tr>
+      <% end %>
+    </table>
+  <% else %>
+  <p>Показаний нет.</p>
+  <% end %>
+</td>
+</tr>
+</table>
+
+
+<p><%= link_to 'Назад к списку пользователей', users_path %></p>

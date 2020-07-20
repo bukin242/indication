@@ -28,6 +28,16 @@ class UsersController < ApplicationController
     end
   end
 
+  def index
+    @users = User.where('admin is not true')
+  end
+
+  def show
+    @user = User.find(params[:id])
+    @cold_water = @user.cold_water
+    @hot_water = @user.hot_water
+  end
+
   private
 
   def user_params

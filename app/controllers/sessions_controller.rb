@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
           session[:user_id] = @user.id
           session[:admin] = @user.admin
           flash[:info] = 'Вход выполнен'
-          redirect_to '/'
+          redirect_to root_path
         else
           flash[:alert] = 'Пароль не подходит'
           render :new

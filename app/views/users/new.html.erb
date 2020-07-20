@@ -1,7 +1,7 @@
 <h1>Новый пользователь</h1>
 
 <% @user.errors.full_messages.each do |msg| %>
-  <li><%= msg %></li>
+  <li class="red"><%= msg %></li>
 <% end %>
 
 <%= form_for @user do |f| %>
