@@ -44,6 +44,10 @@ ru:
       indication:
         hot_water: 'Горячая вода'
         cold_water: 'Холодная вода'
+      password_require:
+        password: 'Пароль'
+        password_require: 'Повторите пароль'
+
   sing_up: 'Регистрация'
   login: 'Вход'
   activerecord:

@@ -1,5 +1,6 @@
 class IndicateController < ApplicationController
   before_action :login_require
+  before_action :admin_require
 
   def new
   end
